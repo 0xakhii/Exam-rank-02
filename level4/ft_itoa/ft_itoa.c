@@ -6,7 +6,7 @@
 /*   By: ojamal <ojamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:43:09 by ojamal            #+#    #+#             */
-/*   Updated: 2023/03/19 04:14:08 by ojamal           ###   ########.fr       */
+/*   Updated: 2023/03/19 04:16:53 by ojamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 char	*ft_itoa(int nbr)
 {
-	int i = 0;
-	int tmp = nbr;
+	int i;
+	long tmp = nbr;
+	if (nbr <= 0)
+		i = 1;
+	else
+		i = 0;
 	while (tmp)
 	{
 		i++;
