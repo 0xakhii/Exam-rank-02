@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ojamal <ojamal@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: ojamal <ojamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 17:43:18 by ojamal            #+#    #+#             */
-/*   Updated: 2023/02/26 18:11:43 by ojamal           ###   ########.fr       */
+/*   Updated: 2023/04/02 21:49:34 by ojamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int main(int ac, char **av)
+int main(int ac, char  *av[])
 {
-    int *tab[256] = {0};
-    int i = 0;
-   if(ac == 3)
+	int i = 0;
+	int tab[256] = {0};
+	if(ac == 3)
 	{
 		while (av[2][i])
 			tab[(int)av[2][i++]] = 1;
@@ -25,11 +25,12 @@ int main(int ac, char **av)
 		{
 			if (tab[(int)av[1][i]] == 1)
 			{
+				tab[(int)av[1][i]] = 0;
 				write(1,&av[1][i],1);
-				tab[(int)av[2][i]] = 0;
 			}
 			i++;
 		}
 	}
-    write(1, "\n", 1);
+	write(1,"\n",1);
+	return 0;
 }
