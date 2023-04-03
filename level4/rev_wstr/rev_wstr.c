@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   rev_wstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojamal <ojamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/19 02:06:53 by ojamal            #+#    #+#             */
-/*   Updated: 2023/04/03 02:34:52 by ojamal           ###   ########.fr       */
+/*   Created: 2023/04/03 02:35:50 by ojamal            #+#    #+#             */
+/*   Updated: 2023/04/03 02:48:28 by ojamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+
 char *ft_strncpy(char *s1, char *s2, int n)
 {
 	int i = 0;
@@ -63,4 +65,33 @@ char    **ft_split(char *str)
 	}
 	split[len] = NULL;
 	return split;
+}
+
+void	ft_putstr(char *str)
+{
+	int i = 0;
+	while(str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+int main(int ac, char **av)
+{
+	int i = 0;
+	char **splited;
+	if (ac == 2)
+	{
+		splited = ft_split(av[1]);
+		while (splited[i])
+			i++;
+		while (--i >= 0)
+		{
+			ft_putstr(splited[i]);
+			if (i != 0)
+				write(1, " ", 1);
+		}
+	}
+	write(1, "\n", 1);
 }
