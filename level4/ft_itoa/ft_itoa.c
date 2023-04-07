@@ -6,7 +6,7 @@
 /*   By: ojamal <ojamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:43:09 by ojamal            #+#    #+#             */
-/*   Updated: 2023/04/07 21:02:27 by ojamal           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:07:25 by ojamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,4 @@ char	*ft_itoa(int nbr)
 		nbr /= 10;
 	}
 	return str;
-}
-#include <stdio.h>
-#include <limits.h>
-int main()
-{
-	printf("%s\n", ft_itoa(INT32_MIN));
 }
