@@ -6,7 +6,7 @@
 /*   By: ojamal <ojamal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 02:43:09 by ojamal            #+#    #+#             */
-/*   Updated: 2023/03/19 04:16:53 by ojamal           ###   ########.fr       */
+/*   Updated: 2023/04/07 21:02:27 by ojamal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_itoa(int nbr)
 {
 	int i;
 	long tmp = nbr;
+	if (nbr == -2147483648)
+		return ("-2147483648");
 	if (nbr <= 0)
 		i = 1;
 	else
@@ -40,4 +42,10 @@ char	*ft_itoa(int nbr)
 		nbr /= 10;
 	}
 	return str;
+}
+#include <stdio.h>
+#include <limits.h>
+int main()
+{
+	printf("%s\n", ft_itoa(INT32_MIN));
 }
