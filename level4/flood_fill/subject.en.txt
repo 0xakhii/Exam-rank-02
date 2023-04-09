@@ -26,6 +26,7 @@ The t_point structure is prototyped like this:
 
 Example:
 
+
 $> cat test.c
 #include <stdlib.h>
 #include <stdio.h>
